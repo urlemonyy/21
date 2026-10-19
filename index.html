@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080916">
+  <title>For Mandaa ✦</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="aurora"></div>
+  <div class="aurora two"></div>
+
+  <nav>
+    <div class="logo">for <span>Mandaa</span> ♡</div>
+    <div class="nav-links">
+      <button onclick="goTo('universe')">Our Universe</button>
+      <button onclick="goTo('letter')">A Letter</button>
+      <button onclick="goTo('secret')">Secret ✦</button>
+    </div>
+  </nav>
+
+  <!-- PEMBUKA -->
+  <section class="hero" id="home">
+    <div class="planet one"></div>
+    <div class="planet two"></div>
+    <div class="planet three"></div>
+
+    <div class="hero-content">
+      <div class="eyebrow">A little universe, just for you</div>
+      <h1>Happy Birthday,<br><em>Sayanggkuu.</em></h1>
+      <p>
+        Di antara miliaran bintang di alam semesta,
+        aku bersyukur semesta mempertemukanku dengan kamu.
+        Hari ini, ada satu dunia kecil yang kubuat khusus untukmu.
+      </p>
+      <button class="primary-btn" onclick="enterUniverse()">
+        SEE OUR UNIVERSE &nbsp; ✦
+      </button>
+      <div class="small-note">made with love, only for you ♡</div>
+    </div>
+  </section>
+
+  <!-- SEMESTA KENANGAN -->
+  <section id="universe">
+    <div class="section-heading reveal">
+      <div class="eyebrow">little pieces of us</div>
+      <h2>My favorite <em>memories.</em></h2>
+      <p>
+        Kalau kenangan kita adalah bintang, mungkin langit ini
+        tidak akan pernah cukup untuk menampung semuanya.
+        Geser foto-fotonya, ya. ♡
+      </p>
+    </div>
+
+    <div class="memory-slider" id="memorySlider">
+      <div class="memory-track" id="memoryTrack"></div>
+    </div>
+
+    <div class="memory-controls">
+      <button type="button" id="memoryPrev" aria-label="Foto sebelumnya">←</button>
+      <span class="memory-hint">little moments, endless memories ♡</span>
+      <button type="button" id="memoryNext" aria-label="Foto berikutnya">→</button>
+    </div>
+  </section>
+
+  <!-- SURAT -->
+  <section id="letter" class="letter-section">
+    <div class="section-heading reveal">
+      <div class="eyebrow">something from my heart</div>
+      <h2>A letter <em>for you.</em></h2>
+      <p>Ada beberapa hal yang ingin kusampaikan, lebih dari sekadar happy birthday.</p>
+    </div>
+
+    <article class="letter reveal">
+      <h2>Dear, <em>Sayanggkuu.</em></h2>
+
+      <p>Happy birthday, sayanggkuu ♡♡♡</p>
+
+      <p>
+        Terima kasih sudah hadir dan menjadi dirimu sendiri.
+        Mungkin aku tidak selalu pandai menyampaikan perasaan,
+        tetapi aku ingin kamu tahu bahwa kehadiranmu berarti banyak untukku.
+      </p>
+
+      <p>
+        Di hari spesialmu ini, ade berharap manda selalu diberi kesehatan,
+        kebahagiaan, ketenangan, dan keberanian untuk mengejar semua
+        hal yang kamu impikan. Semoga hal-hal baik menemukan jalannya
+        menuju kamu, bahkan di hari-hari ketika semuanya terasa sulit.
+      </p>
+
+      <p>
+        Ade tidak bisa menjanjikan bahwa setiap hari akan selalu mudah.
+        Tapi ade ingin terus belajar menjadi seseorang yang bisa
+        mendengarkanmu, mendukungmu, dan tumbuh bersama kamu.
+      </p>
+
+      <p>
+        Selamat bertambah usia, Sayanggkuu.
+        Semoga dunia memperlakukanmu selembut caramu membuat
+        duniaku terasa lebih indah.
+      </p>
+
+      <p class="signature">
+        With all my love,<br>
+        someone who is lucky to have you. ♡
+      </p>
+    </article>
+  </section>
+
+  <!-- MUSIK -->
+  <section id="music">
+    <div class="section-heading reveal">
+      <div class="eyebrow">our little soundtrack</div>
+      <h2><em>A song that reminds me of you.</em></h2>
+      <p>A little song, lagu yang kamu sukaa Byy. ♡</p>
+    </div>
+
+    <div class="video-frame reveal music-video">              
+        <iframe
+            id="birthdayMusic"
+            src="https://www.youtube-nocookie.com/embed/2uJut6USftQ?enablejsapi=1&autoplay=1&playsinline=1&rel=0"
+            title="Jatuh Suka - Tulus"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <p class="music-link">
+      <a
+        href="https://www.youtube.com/watch?v=2uJut6USftQ"
+        target="_blank"
+        rel="noopener noreferrer">
+        Open on YouTube ↗
+      </a>
+    </p>
+  </section>
+
+  <!-- PESAN RAHASIA -->
+  <section id="secret">
+    <div class="section-heading reveal">
+      <div class="eyebrow">classified: only for you</div>
+      <h2>A little <em>secret.</em></h2>
+      <p>There's something here, but you have to know the key. 🤍</p>
+    </div>
+
+    <div class="secret-box reveal">
+      <div class="secret-icon">🔐</div>
+      <h3>Only you can open this.</h3>
+      <p>Masukkan kata sandi untuk membuka pesan rahasiamu.</p>
+
+      <form id="secretForm">
+        <input
+          id="secretPassword"
+          type="password"
+          placeholder="Your secret key..."
+          autocomplete="off"
+          aria-label="Kata sandi pesan rahasia"
+          required>
+        <button class="primary-btn" type="submit">UNLOCK MESSAGE ✦</button>
+      </form>
+
+      <div id="secretMessage" class="secret-message" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- KEJUTAN TERAKHIR -->
+  <section id="surprise">
+    <div class="surprise-card reveal">
+      <div class="eyebrow">one last thing</div>
+      <div class="gift">🎁</div>
+      <h2>Before you go...</h2>
+      <p>
+        There's one last little thing I want you to know.
+        Ready, birthday girl?
+      </p>
+      <button class="primary-btn" onclick="revealSurprise()">
+        OPEN YOUR LAST SURPRISE ♡
+      </button>
+
+      <div id="surpriseMessage" class="surprise-message" aria-live="polite">
+        <p>
+          If I could make one birthday wish for myself,
+          it would be to have more time to make you smile.
+        </p>
+        <p>
+          Terima kasih sudah menjadi kamu, Ndaa.
+          Semoga tahun ini membawa banyak alasan untuk tertawa,
+          banyak mimpi yang menjadi nyata, dan banyak momen
+          yang suatu hari nanti akan kita kenang bersama.
+        </p>
+        <p>
+          Happy birthday, Mandaa. 🌙
+        </p>
+        <p class="forever-symbol">♡ ∞ ♡</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    made under the same sky, somewhere in this universe<br>
+    for <span>Bubbyy</span>, with love. ♡
+  </footer>
+
+  <!-- MODAL FOTO -->
+  <div class="modal" id="photoModal"
+       role="dialog" aria-modal="true" aria-label="Galeri foto">
+    <button class="modal-close" onclick="closeModal('photoModal')"
+            aria-label="Tutup galeri">×</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Foto kenangan">
+      <p id="modalCaption" class="modal-caption"></p>
+      <div class="modal-controls">
+        <button onclick="changePhoto(-1)">← Previous</button>
+        <button onclick="changePhoto(1)">Next →</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
